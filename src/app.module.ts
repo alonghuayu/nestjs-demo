@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { PostsModule } from './modules/posts/posts.module';
+import { PostsModule } from './section/posts/posts.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigService, ConfigModule } from '@nestjs/config';
+import { TestModule } from './section/test/test.module';
+import { CatsModule } from './section/cats/cats.module';
 import envConfig from '../config/env';
 
 @Module({
@@ -27,6 +29,8 @@ import envConfig from '../config/env';
         autoLoadEntities: true,
       }),
     }),
+    TestModule,
+    CatsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
