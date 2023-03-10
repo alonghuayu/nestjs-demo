@@ -1,7 +1,7 @@
 import { PostsService, PostsRo } from './posts.service';
 import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { CreatePostDto } from 'src/dto/create-post.dot';
+import { CreatePostDto } from 'src/section/posts/create-post.dot';
 
 @ApiTags("文章")
 @Controller('post')

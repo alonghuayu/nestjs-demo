@@ -9,10 +9,11 @@ import { CatsModule } from './section/cats/cats.module';
 import envConfig from '../config/env';
 
 @Module({
-  imports: [PostsModule, ConfigModule.forRoot({
-    isGlobal: true,  // 设置为全局
-    envFilePath: [envConfig.path]
-  }),
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,  // 设置为全局
+      envFilePath: [envConfig.path]
+    }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
@@ -29,6 +30,7 @@ import envConfig from '../config/env';
         autoLoadEntities: true,
       }),
     }),
+    PostsModule,
     TestModule,
     CatsModule,
   ],
