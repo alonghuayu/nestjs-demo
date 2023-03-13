@@ -10,9 +10,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
       : HttpStatus.INTERNAL_SERVER_ERROR; // 获取异常状态码
 
     // 设置错误信息
-    const message = exception.message
-      ? exception.message
-      : `${status >= 500 ? 'Service Error' : 'Client Error'}`;
+    const message = exception.message ? exception.message : `${status >= 500 ? 'Service Error' : 'Client Error'}`;
     const errorResponse = {
       data: {},
       message: message,
