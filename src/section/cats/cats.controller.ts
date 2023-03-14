@@ -6,7 +6,7 @@ import { CreateCatDto } from './create-cat.dto';
 
 @Controller('cats')
 export class CatsController {
-    constructor(private catsService: CatsService) { }
+    constructor(private readonly catsService: CatsService) { }
 
     // @Get('list')
     // findAll(@Req() request: Request): string {
